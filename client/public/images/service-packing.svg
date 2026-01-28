@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boxGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boxGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Modern background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  
+  <!-- Decorative shapes -->
+  <circle cx="330" cy="60" r="50" fill="#06b6d4" opacity="0.08"/>
+  <circle cx="70" cy="260" r="60" fill="#ec4899" opacity="0.08"/>
+  <rect x="20" y="150" width="120" height="120" fill="#fbbf24" opacity="0.05" rx="15"/>
+  
+  <!-- Stack of modern boxes -->
+  <g filter="url(#shadow)">
+    <!-- Bottom box -->
+    <rect x="80" y="160" width="140" height="100" fill="url(#boxGrad1)" rx="8" stroke="#b45309" stroke-width="2"/>
+    <line x1="85" y1="175" x2="215" y2="175" stroke="#b45309" stroke-width="1.5" opacity="0.3"/>
+    <line x1="85" y1="195" x2="215" y2="195" stroke="#b45309" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Middle box offset -->
+    <rect x="100" y="120" width="140" height="100" fill="url(#boxGrad2)" rx="8" stroke="#be185d" stroke-width="2"/>
+    <line x1="105" y1="135" x2="235" y2="135" stroke="#be185d" stroke-width="1.5" opacity="0.3"/>
+    <line x1="105" y1="155" x2="235" y2="155" stroke="#be185d" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Top box offset -->
+    <rect x="120" y="80" width="140" height="100" fill="url(#boxGrad3)" rx="8" stroke="#0d7377" stroke-width="2"/>
+    <line x1="125" y1="95" x2="255" y2="95" stroke="#0d7377" stroke-width="1.5" opacity="0.3"/>
+    <line x1="125" y1="115" x2="255" y2="115" stroke="#0d7377" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Tape on boxes -->
+    <line x1="185" y1="85" x2="185" y2="165" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    <line x1="150" y1="125" x2="220" y2="145" stroke="#ffffff" stroke-width="1.5" opacity="0.3"/>
+  </g>
+  
+  <!-- Icon indicators -->
+  <circle cx="340" cy="260" r="32" fill="#06b6d4" opacity="0.1"/>
+  <text x="340" y="268" text-anchor="middle" font-size="28" fill="#0891b2" font-weight="bold">📦</text>
+</svg>

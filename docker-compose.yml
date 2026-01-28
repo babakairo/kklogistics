@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: kklogistics-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: kklogistics_dev
+      MYSQL_USER: kklogistics_user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      # Persist database data even after container stops
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Node.js Application
+  app:
+    build: .
+    container_name: kklogistics-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: mysql://kklogistics_user:userpassword@mysql:3306/kklogistics_dev
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      # Hot reload in development
+      - .:/app
+      - /app/node_modules
+      - /app/dist
+    command: npm run dev
+
+volumes:
+  mysql_data:

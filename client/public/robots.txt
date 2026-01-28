@@ -1,0 +1,15 @@
+# robots.txt for KK Logistics
+# https://kklogistics.co.uk
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kklogistics.co.uk/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block admin/api paths from indexing
+Disallow: /api/
+Disallow: /_core/

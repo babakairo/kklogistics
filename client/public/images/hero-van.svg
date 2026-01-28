@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="truckGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Modern Decorative shapes with glassmorphism effect -->
+  <circle cx="1050" cy="120" r="120" fill="#0ea5e9" opacity="0.1"/>
+  <circle cx="150" cy="500" r="140" fill="#ec4899" opacity="0.1"/>
+  <rect x="30" y="200" width="280" height="280" fill="#06b6d4" opacity="0.05" rx="20" transform="rotate(-20 170 340)"/>
+  
+  <!-- Modern Ground/Road -->
+  <rect y="450" width="1200" height="150" fill="#1e293b"/>
+  <rect y="450" width="1200" height="2" fill="#0ea5e9" opacity="0.5"/>
+  <line x1="0" y1="480" x2="1200" y2="480" stroke="#06b6d4" stroke-width="2" stroke-dasharray="40,60" opacity="0.4"/>
+  
+  <!-- Modern Van with enhanced design -->
+  <g filter="url(#shadow)">
+    <!-- Van body -->
+    <rect x="300" y="200" width="350" height="200" fill="url(#truckGradient)" rx="25" stroke="#00d9ff" stroke-width="2" opacity="0.9"/>
+    
+    <!-- Van cabin/cab -->
+    <rect x="600" y="180" width="90" height="130" fill="#0891b2" rx="10"/>
+    <polygon points="690,180 750,140 750,180" fill="#0891b2"/>
+    
+    <!-- Modern Window design -->
+    <rect x="315" y="225" width="105" height="85" fill="#e0f2fe" rx="8" opacity="0.85"/>
+    <rect x="430" y="225" width="105" height="85" fill="#e0f2fe" rx="8" opacity="0.85"/>
+    <rect x="615" y="200" width="70" height="70" fill="#e0f2fe" rx="6" opacity="0.85"/>
+    
+    <!-- Door handle (modern) -->
+    <circle cx="540" cy="310" r="10" fill="#fbbf24" opacity="0.9"/>
+    <line x1="530" y1="310" x2="550" y2="310" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Modern Wheels -->
+    <circle cx="360" cy="420" r="45" fill="#0f172a" stroke="#0ea5e9" stroke-width="3"/>
+    <circle cx="360" cy="420" r="32" fill="#1e293b" stroke="#0ea5e9" stroke-width="2" opacity="0.7"/>
+    <circle cx="360" cy="420" r="18" fill="#0ea5e9" opacity="0.4"/>
+    
+    <circle cx="600" cy="420" r="45" fill="#0f172a" stroke="#0ea5e9" stroke-width="3"/>
+    <circle cx="600" cy="420" r="32" fill="#1e293b" stroke="#0ea5e9" stroke-width="2" opacity="0.7"/>
+    <circle cx="600" cy="420" r="18" fill="#0ea5e9" opacity="0.4"/>
+  </g>
+  
+  <!-- Modern Cargo boxes with gradient -->
+  <defs>
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boxGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <g filter="url(#shadow)">
+    <rect x="550" y="260" width="40" height="40" fill="url(#boxGrad1)" rx="4" stroke="#b45309" stroke-width="1.5"/>
+    <line x1="555" y1="265" x2="585" y2="265" stroke="#b45309" stroke-width="1" opacity="0.4"/>
+    <line x1="555" y1="275" x2="585" y2="275" stroke="#b45309" stroke-width="1" opacity="0.4"/>
+    
+    <rect x="600" y="248" width="40" height="52" fill="url(#boxGrad2)" rx="4" stroke="#991b1b" stroke-width="1.5"/>
+    <line x1="605" y1="254" x2="635" y2="254" stroke="#991b1b" stroke-width="1" opacity="0.4"/>
+    <line x1="605" y1="264" x2="635" y2="264" stroke="#991b1b" stroke-width="1" opacity="0.4"/>
+    <line x1="605" y1="274" x2="635" y2="274" stroke="#991b1b" stroke-width="1" opacity="0.4"/>
+    
+    <rect x="650" y="275" width="35" height="35" fill="url(#boxGrad1)" rx="3" stroke="#b45309" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Modern Sun with glow -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="1080" cy="90" r="55" fill="#fbbf24" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="1080" cy="90" r="50" fill="#fbbf24" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Stars in background -->
+  <circle cx="200" cy="100" r="2" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="400" cy="80" r="2.5" fill="#fbbf24" opacity="0.5"/>
+  <circle cx="800" cy="120" r="1.5" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="950" cy="140" r="2" fill="#fbbf24" opacity="0.5"/>
+  
+  <!-- Modern typography and text -->
+  <text x="120" y="100" font-size="56" font-weight="800" fill="#06b6d4" letter-spacing="2">KK LOGISTICS</text>
+  <text x="120" y="150" font-size="28" font-weight="500" fill="#0ea5e9">Professional Moving Services</text>
+  <text x="120" y="190" font-size="20" fill="#7dd3fc" font-weight="300" opacity="0.9">Fast • Reliable • Professional • Trusted</text>
+  
+  <!-- Decorative accent line -->
+  <line x1="120" y1="210" x2="420" y2="210" stroke="#0ea5e9" stroke-width="3" opacity="0.7"/>
+</svg>

@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1769106304681,
+      "tag": "0000_free_lady_mastermind",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1769106403257,
+      "tag": "0001_lethal_malice",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1769108777310,
+      "tag": "0002_nosy_warbound",
+      "breakpoints": true
+    }
+  ]
+}

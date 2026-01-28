@@ -1,0 +1,97 @@
+CREATE TABLE `driverApplications` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`driverId` int NOT NULL,
+	`status` enum('submitted','under_review','documents_requested','approved','rejected') NOT NULL DEFAULT 'submitted',
+	`drivingLicenseUrl` text,
+	`insuranceDocumentUrl` text,
+	`vehiclePhotoUrl` text,
+	`proofOfAddressUrl` text,
+	`reviewedBy` int,
+	`reviewedAt` timestamp,
+	`reviewNotes` text,
+	`submittedAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `driverApplications_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `drivers` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`userId` int,
+	`fullName` varchar(255) NOT NULL,
+	`email` varchar(320) NOT NULL,
+	`phone` varchar(20) NOT NULL,
+	`address` text,
+	`postcode` varchar(10),
+	`dateOfBirth` varchar(20),
+	`drivingLicenseNumber` varchar(50),
+	`licenseExpiryDate` varchar(20),
+	`vanMake` varchar(100),
+	`vanModel` varchar(100),
+	`vanYear` int,
+	`vanRegistration` varchar(20),
+	`vanCapacity` enum('small','medium','large','luton') DEFAULT 'medium',
+	`insuranceProvider` varchar(255),
+	`insurancePolicyNumber` varchar(100),
+	`insuranceExpiryDate` varchar(20),
+	`hasGoodsInTransitInsurance` boolean DEFAULT false,
+	`serviceAreas` text,
+	`servicesOffered` text,
+	`maxDistanceKm` int DEFAULT 50,
+	`availableDays` text,
+	`availableFrom` varchar(10),
+	`availableTo` varchar(10),
+	`isAvailable` boolean DEFAULT true,
+	`status` enum('pending','approved','rejected','suspended','inactive') NOT NULL DEFAULT 'pending',
+	`rejectionReason` text,
+	`approvedAt` timestamp,
+	`approvedBy` int,
+	`totalJobs` int DEFAULT 0,
+	`completedJobs` int DEFAULT 0,
+	`averageRating` decimal(3,2) DEFAULT '0',
+	`adminNotes` text,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `drivers_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `jobs` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`leadId` int,
+	`quoteId` int,
+	`driverId` int,
+	`jobType` enum('house_removal','furniture_delivery','office_move','courier') NOT NULL,
+	`title` varchar(255) NOT NULL,
+	`description` text,
+	`pickupAddress` text NOT NULL,
+	`pickupPostcode` varchar(10),
+	`pickupContactName` varchar(255),
+	`pickupContactPhone` varchar(20),
+	`deliveryAddress` text NOT NULL,
+	`deliveryPostcode` varchar(10),
+	`deliveryContactName` varchar(255),
+	`deliveryContactPhone` varchar(20),
+	`scheduledDate` varchar(20) NOT NULL,
+	`scheduledTime` varchar(20),
+	`estimatedDuration` int,
+	`customerPrice` decimal(10,2) NOT NULL,
+	`driverPayout` decimal(10,2),
+	`distanceKm` decimal(10,2),
+	`status` enum('pending','assigned','accepted','in_progress','completed','cancelled','disputed') NOT NULL DEFAULT 'pending',
+	`driverAcceptedAt` timestamp,
+	`driverStartedAt` timestamp,
+	`driverCompletedAt` timestamp,
+	`customerRating` int,
+	`customerFeedback` text,
+	`assignedBy` int,
+	`notes` text,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `jobs_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+ALTER TABLE `users` MODIFY COLUMN `role` enum('user','admin','driver') NOT NULL DEFAULT 'user';--> statement-breakpoint
+ALTER TABLE `driverApplications` ADD CONSTRAINT `driverApplications_driverId_drivers_id_fk` FOREIGN KEY (`driverId`) REFERENCES `drivers`(`id`) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE `drivers` ADD CONSTRAINT `drivers_userId_users_id_fk` FOREIGN KEY (`userId`) REFERENCES `users`(`id`) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE `jobs` ADD CONSTRAINT `jobs_leadId_leads_id_fk` FOREIGN KEY (`leadId`) REFERENCES `leads`(`id`) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE `jobs` ADD CONSTRAINT `jobs_quoteId_quotes_id_fk` FOREIGN KEY (`quoteId`) REFERENCES `quotes`(`id`) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE `jobs` ADD CONSTRAINT `jobs_driverId_drivers_id_fk` FOREIGN KEY (`driverId`) REFERENCES `drivers`(`id`) ON DELETE no action ON UPDATE no action;
