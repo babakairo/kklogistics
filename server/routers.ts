@@ -5,6 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { invokeLLM } from "./_core/llm";
 import { notifyOwner } from "./_core/notification";
+import { generatePostcodeQuote } from "./quoteService";
 import { TRPCError } from "@trpc/server";
 import { 
   createLead, 
@@ -201,6 +202,35 @@ Reply to this customer promptly!`
       }))
       .mutation(async ({ input }) => {
         return createQuote(input);
+      }),
+  }),
+
+  // Postcode-based quote calculator
+  postcode: router({
+    quote: publicProcedure
+      .input(z.object({
+        origin: z.string().min(1, "Origin postcode required"),
+        destination: z.string().min(1, "Destination postcode required"),
+        priceConfig: z.object({
+          base_fee: z.number().optional(),
+          per_mile: z.number().optional(),
+          minimum_charge: z.number().optional(),
+        }).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        try {
+          const result = await generatePostcodeQuote({
+            origin: input.origin,
+            destination: input.destination,
+            priceConfig: input.priceConfig,
+          });
+          return result;
+        } catch (error: any) {
+          throw new TRPCError({
+            code: 'BAD_REQUEST',
+            message: error.message || 'Failed to calculate quote',
+          });
+        }
       }),
   }),
 
