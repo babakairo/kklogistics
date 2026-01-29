@@ -100,7 +100,8 @@
   <circle cx="950" cy="140" r="2" fill="#fbbf24" opacity="0.5"/>
   
   <!-- Modern typography and text -->
-  <text x="120" y="100" font-size="56" font-weight="800" fill="#06b6d4" letter-spacing="2">KK LOGISTICS</text>
+  <text x="60" y="90" font-size="52" font-weight="800" fill="#06b6d4" letter-spacing="2">KAITHAN</text>
+  <text x="40" y="160" font-size="52" font-weight="800" fill="#0ea5e9" letter-spacing="2">LOGISTICS</text>
   <text x="120" y="150" font-size="28" font-weight="500" fill="#0ea5e9">Professional Moving Services</text>
   <text x="120" y="190" font-size="20" fill="#7dd3fc" font-weight="300" opacity="0.9">Fast • Reliable • Professional • Trusted</text>
   
