@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
+import { PostcodeQuoteCalculator } from "@/components/PostcodeQuoteCalculator";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { 
@@ -154,6 +155,11 @@ export default function Quote() {
         {/* Quote Calculator */}
         <section className="pb-16 md:pb-24">
           <div className="container">
+            {/* Postcode Calculator - Top Priority */}
+            <div className="mb-12">
+              <PostcodeQuoteCalculator />
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Calculator Form */}
               <div className="lg:col-span-2 space-y-8">
