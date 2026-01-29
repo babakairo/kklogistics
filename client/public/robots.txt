@@ -1,11 +1,11 @@
-# robots.txt for KK Logistics
-# https://kklogistics.co.uk
+# robots.txt for Kaithan Logistics
+# https://kaithanlogistics.up.railway.app
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kklogistics.co.uk/sitemap.xml
+Sitemap: https://kaithanlogistics.up.railway.app/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
