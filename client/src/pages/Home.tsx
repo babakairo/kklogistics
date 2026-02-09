@@ -31,28 +31,28 @@ const services = [
     title: "House Removals",
     description: "Full house moves handled with care. From packing to unpacking, we've got you covered.",
     href: "/services/house-removals",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&h=600&fit=crop&q=80"
   },
   {
     icon: Package,
     title: "Furniture Delivery",
     description: "Safe transport for your furniture purchases. Collection and delivery across Falkirk.",
     href: "/services/furniture-delivery",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&h=600&fit=crop&q=80"
   },
   {
     icon: Building2,
     title: "Office Moves",
     description: "Minimize downtime with our efficient office relocation services.",
     href: "/services/office-moves",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80"
   },
   {
     icon: Zap,
     title: "Courier Services",
     description: "Fast, reliable same-day and next-day delivery for packages of all sizes.",
     href: "/services/courier-services",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&h=600&fit=crop&q=80"
   }
 ];
 

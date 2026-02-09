@@ -59,7 +59,7 @@ export default function BlogPostOfficeRelocation() {
         <section className="pb-16 md:pb-24">
           <div className="container max-w-3xl space-y-6 text-muted-foreground font-light leading-relaxed">
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80"
               alt="Moving truck ready for an office relocation"
               className="w-full h-64 object-cover rounded-xl"
               loading="lazy"

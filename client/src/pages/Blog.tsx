@@ -21,7 +21,7 @@ const posts = [
       "A practical, step-by-step guide to planning, packing, and moving day coordination for Scottish homes.",
     href: "/blog/stress-free-house-move-scotland",
     date: "9 Feb 2026",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&h=700&fit=crop",
+    image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=900&h=700&fit=crop&q=80",
   },
   {
     title: "A Checklist for Your Upcoming Office Relocation",
@@ -29,7 +29,7 @@ const posts = [
       "Everything a business needs to prepare for a smooth office move, from IT planning to staff communication.",
     href: "/blog/office-relocation-checklist",
     date: "9 Feb 2026",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=700&fit=crop",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=700&fit=crop&q=80",
   },
 ];
 

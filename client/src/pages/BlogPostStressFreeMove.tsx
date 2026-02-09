@@ -59,7 +59,7 @@ export default function BlogPostStressFreeMove() {
         <section className="pb-16 md:pb-24">
           <div className="container max-w-3xl space-y-6 text-muted-foreground font-light leading-relaxed">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=800&fit=crop"
+              src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=1200&h=800&fit=crop&q=80"
               alt="Moving boxes packed and ready"
               className="w-full h-64 object-cover rounded-xl"
               loading="lazy"

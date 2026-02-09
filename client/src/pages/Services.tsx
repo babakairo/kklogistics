@@ -24,7 +24,7 @@ const services = [
     title: "House Removals",
     subtitle: "Full Home Moving Service",
     description: "Moving home is stressful enough without worrying about the logistics. Our comprehensive house removal service takes care of everything, from careful packing to safe transport and unpacking at your new address.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&h=750&fit=crop",
+    image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=1000&h=750&fit=crop&q=80",
     features: [
       "Full or partial packing service available",
       "Furniture disassembly and reassembly",
@@ -42,7 +42,7 @@ const services = [
     title: "Furniture Delivery",
     subtitle: "Safe & Secure Transport",
     description: "Whether you've bought a new sofa, picked up a bargain on Gumtree, or need furniture moved between properties, we provide careful collection and delivery across Falkirk and beyond.",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&h=750&fit=crop",
+    image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1000&h=750&fit=crop&q=80",
     features: [
       "Collection from any retailer or private seller",
       "Careful handling of all furniture types",
@@ -60,7 +60,7 @@ const services = [
     title: "Office Moves",
     subtitle: "Minimize Business Downtime",
     description: "Relocating your business requires careful planning and execution. We work around your schedule to ensure minimal disruption, handling everything from desks and chairs to IT equipment and filing cabinets.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&h=750&fit=crop",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&h=750&fit=crop&q=80",
     features: [
       "Weekend and evening moves available",
       "IT equipment handling",
@@ -78,7 +78,7 @@ const services = [
     title: "Courier Services",
     subtitle: "Fast & Reliable Delivery",
     description: "Need something delivered urgently? Our courier service offers same-day and next-day delivery for packages of all sizes across Central Scotland. Perfect for businesses and individuals alike.",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1000&h=750&fit=crop",
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1000&h=750&fit=crop&q=80",
     features: [
       "Same-day delivery available",
       "Real-time tracking updates",

@@ -90,7 +90,7 @@ export default function ServiceCourierServices() {
 
             <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&h=700&fit=crop"
+                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=900&h=700&fit=crop&q=80"
                 alt="Courier organizing parcels in a van"
                 className="w-full h-44 object-cover rounded-lg"
                 loading="lazy"

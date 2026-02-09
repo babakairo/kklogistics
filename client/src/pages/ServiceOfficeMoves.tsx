@@ -90,7 +90,7 @@ export default function ServiceOfficeMoves() {
 
             <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=700&fit=crop"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=700&fit=crop&q=80"
                 alt="Team beside a delivery van ready for an office move"
                 className="w-full h-44 object-cover rounded-lg"
                 loading="lazy"

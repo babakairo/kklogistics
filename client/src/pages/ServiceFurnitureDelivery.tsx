@@ -92,7 +92,7 @@ export default function ServiceFurnitureDelivery() {
 
             <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=700&fit=crop"
+                src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=900&h=700&fit=crop&q=80"
                 alt="Delivery professional loading boxes into a van"
                 className="w-full h-44 object-cover rounded-lg"
                 loading="lazy"

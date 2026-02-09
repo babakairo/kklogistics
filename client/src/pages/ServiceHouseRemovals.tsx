@@ -93,7 +93,7 @@ export default function ServiceHouseRemovals() {
 
             <div className="bg-card border border-border/50 rounded-xl p-6 space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&h=700&fit=crop"
+                src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=900&h=700&fit=crop&q=80"
                 alt="Family moving boxes into a home"
                 className="w-full h-44 object-cover rounded-lg"
                 loading="lazy"
