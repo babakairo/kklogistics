@@ -1,26 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kaithanlogistics.up.railway.app/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://kaithanlogistics.co.uk/</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kaithanlogistics.up.railway.app/services</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://kaithanlogistics.co.uk/services</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kaithanlogistics.up.railway.app/quote</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://kaithanlogistics.co.uk/services/house-removals</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/services/furniture-delivery</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/services/office-moves</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/services/courier-services</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/service-area/man-with-a-van-glasgow</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/service-area/man-with-a-van-edinburgh</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/about-us</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/blog</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/blog/stress-free-house-move-scotland</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/blog/office-relocation-checklist</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaithanlogistics.co.uk/quote</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://kaithanlogistics.up.railway.app/contact</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://kaithanlogistics.co.uk/contact</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

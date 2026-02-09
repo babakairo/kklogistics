@@ -2,11 +2,28 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { Menu, Phone, X } from "lucide-react";
+
+const serviceLinks = [
+  { href: "/services/house-removals", label: "House Removals" },
+  { href: "/services/furniture-delivery", label: "Furniture Delivery" },
+  { href: "/services/office-moves", label: "Office Moves" },
+  { href: "/services/courier-services", label: "Courier Services" },
+];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/blog", label: "Blog" },
   { href: "/quote", label: "Get Quote" },
   { href: "/contact", label: "Contact" },
 ];
@@ -31,20 +48,58 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-smooth hover:text-primary ${
-                  location === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center gap-6">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/"
+                      className={`text-sm font-medium transition-smooth hover:text-primary ${
+                        location === "/" ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    >
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-muted-foreground">Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid w-56 gap-1 p-2">
+                      <NavigationMenuLink asChild>
+                        <Link href="/services" className={navigationMenuTriggerStyle()}>
+                          All Services
+                        </Link>
+                      </NavigationMenuLink>
+                      {serviceLinks.map((link) => (
+                        <NavigationMenuLink key={link.href} asChild>
+                          <Link href={link.href} className="rounded-md px-3 py-2 text-sm hover:bg-accent">
+                            {link.label}
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                {navLinks
+                  .filter((link) => link.href !== "/")
+                  .map((link) => (
+                    <NavigationMenuItem key={link.href}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={link.href}
+                          className={`text-sm font-medium transition-smooth hover:text-primary px-3 py-2 rounded-md ${
+                            location === link.href ? "text-primary" : "text-muted-foreground"
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* CTA & Phone */}
@@ -71,20 +126,53 @@ export default function Header() {
             <SheetContent side="right" className="w-full max-w-sm">
               <div className="flex flex-col h-full pt-8">
                 <nav className="flex flex-col gap-4">
-                  {navLinks.map((link) => (
+                  <Link
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-lg font-medium py-2 transition-smooth ${
+                      location === "/" ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
+                    Home
+                  </Link>
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Services</p>
                     <Link
-                      key={link.href}
-                      href={link.href}
+                      href="/services"
                       onClick={() => setMobileMenuOpen(false)}
                       className={`text-lg font-medium py-2 transition-smooth ${
-                        location === link.href
-                          ? "text-primary"
-                          : "text-muted-foreground"
+                        location === "/services" ? "text-primary" : "text-muted-foreground"
                       }`}
                     >
-                      {link.label}
+                      All Services
                     </Link>
-                  ))}
+                    {serviceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`text-base font-medium py-1 transition-smooth ${
+                          location === link.href ? "text-primary" : "text-muted-foreground"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                  {navLinks
+                    .filter((link) => link.href !== "/")
+                    .map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`text-lg font-medium py-2 transition-smooth ${
+                          location === link.href ? "text-primary" : "text-muted-foreground"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
                 </nav>
                 
                 <div className="mt-auto pb-8 space-y-4">

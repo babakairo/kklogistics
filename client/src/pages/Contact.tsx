@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
+import Seo from "@/components/Seo";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { 
@@ -23,6 +24,13 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
+  const businessAddress = [
+    "Kaithan Logistics",
+    "Falkirk, Scotland",
+    "FK1 1AA",
+  ];
+  const mapEmbedUrl = "https://www.google.com/maps?q=Falkirk%2C%20Scotland&output=embed";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,6 +67,17 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Contact Us | Kaithan Logistics | Falkirk & Central Scotland"
+        description="Contact Kaithan Logistics for removals, deliveries, and courier services. Call, WhatsApp, or request a quote online."
+        canonicalPath="/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Kaithan Logistics",
+          url: "https://kaithanlogistics.co.uk/contact",
+        }}
+      />
       <Header />
       
       <main className="flex-1">
@@ -242,6 +261,29 @@ export default function Contact() {
                 <p className="text-muted-foreground font-light mb-8">
                   Based in Falkirk, we serve customers across Central Scotland.
                 </p>
+
+                <Card className="border-border/50 mb-6">
+                  <CardContent className="p-6 space-y-3">
+                    <div className="flex items-center gap-2 text-sm font-semibold">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Business Address
+                    </div>
+                    <div className="text-sm text-muted-foreground font-light">
+                      {businessAddress.map((line) => (
+                        <div key={line}>{line}</div>
+                      ))}
+                    </div>
+                    <div className="overflow-hidden rounded-lg border border-border/50">
+                      <iframe
+                        title="Kaithan Logistics Location"
+                        src={mapEmbedUrl}
+                        className="w-full h-56"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
                 
                 <ServiceAreaMap showDistanceCalculator={true} />
 

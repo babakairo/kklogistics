@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { PostcodeQuoteCalculator } from "@/components/PostcodeQuoteCalculator";
+import Seo from "@/components/Seo";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { 
@@ -133,6 +134,17 @@ export default function Quote() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Get a Free Instant Quote | Kaithan Logistics"
+        description="Get an instant quote for house removals, furniture delivery, office moves, and courier services across Central Scotland."
+        canonicalPath="/quote"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Get a Quote",
+          url: "https://kaithanlogistics.co.uk/quote",
+        }}
+      />
       <Header />
       
       <main className="flex-1">

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import StickyMobileButtons from "@/components/StickyMobileButtons";
+import Seo from "@/components/Seo";
 import { 
   Truck, 
   Package, 
@@ -29,29 +30,29 @@ const services = [
     icon: Truck,
     title: "House Removals",
     description: "Full house moves handled with care. From packing to unpacking, we've got you covered.",
-    href: "/services#house-removals",
-    image: "/images/service-packing.svg"
+    href: "/services/house-removals",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
   },
   {
     icon: Package,
     title: "Furniture Delivery",
     description: "Safe transport for your furniture purchases. Collection and delivery across Falkirk.",
-    href: "/services#furniture-delivery",
-    image: "/images/service-furniture.svg"
+    href: "/services/furniture-delivery",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
   },
   {
     icon: Building2,
     title: "Office Moves",
     description: "Minimize downtime with our efficient office relocation services.",
-    href: "/services#office-moves",
-    image: "/images/service-office.svg"
+    href: "/services/office-moves",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
   },
   {
     icon: Zap,
     title: "Courier Services",
     description: "Fast, reliable same-day and next-day delivery for packages of all sizes.",
-    href: "/services#courier",
-    image: "/images/service-courier.svg"
+    href: "/services/courier-services",
+    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop"
   }
 ];
 
@@ -65,6 +66,19 @@ const features = [
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background pb-20 md:pb-0">
+      <Seo
+        title="Man with a Van Falkirk | Removals & Delivery Scotland | Kaithan Logistics"
+        description="Professional removals, furniture delivery & courier services across Scotland. Falkirk-based, fully insured, same-day available. Free instant quotes. 07459 920 895."
+        canonicalPath="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Kaithan Logistics",
+          url: "https://kaithanlogistics.co.uk/",
+          description:
+            "Professional removals, furniture delivery & courier services across Scotland. Falkirk-based, fully insured, same-day available.",
+        }}
+      />
       <Header />
       <StickyMobileButtons />
       
@@ -204,6 +218,96 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="section-spacing bg-background">
+          <div className="container">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="subtitle mb-4">Customer Reviews</p>
+              <h2 className="mb-4">Trusted by Local Customers</h2>
+              <p className="text-lg text-muted-foreground font-light">
+                Real feedback from moves and deliveries across Central Scotland.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Sarah M.",
+                  location: "Falkirk",
+                  quote: "Brilliant service. The team were on time, careful with our furniture, and very friendly.",
+                },
+                {
+                  name: "James R.",
+                  location: "Glasgow",
+                  quote: "Same-day collection and delivery was smooth and stress-free. Highly recommend.",
+                },
+                {
+                  name: "Priya K.",
+                  location: "Edinburgh",
+                  quote: "Great communication and clear pricing. Our flat move went perfectly.",
+                },
+                {
+                  name: "David L.",
+                  location: "Stirling",
+                  quote: "Reliable and professional. Took great care of our office equipment.",
+                },
+              ].map((review) => (
+                <Card key={review.name} className="border-border/50">
+                  <CardContent className="p-6 space-y-4">
+                    <p className="text-sm text-muted-foreground font-light">“{review.quote}”</p>
+                    <div>
+                      <p className="font-semibold">{review.name}</p>
+                      <p className="text-xs text-muted-foreground">{review.location}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Badges */}
+        <section className="section-spacing bg-card">
+          <div className="container">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="subtitle mb-4">Trusted & Insured</p>
+              <h2 className="mb-4">Why Customers Choose Us</h2>
+              <p className="text-lg text-muted-foreground font-light">
+                Fully insured, 5-star rated, and committed to safe, reliable transport.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="bg-background border-border/50">
+                <CardContent className="p-6 text-center space-y-3">
+                  <Shield className="w-8 h-8 mx-auto text-pastel-blue" />
+                  <h3 className="font-bold">Fully Insured</h3>
+                  <p className="text-sm text-muted-foreground font-light">
+                    Goods in transit and public liability coverage.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-background border-border/50">
+                <CardContent className="p-6 text-center space-y-3">
+                  <Star className="w-8 h-8 mx-auto text-amber-500" />
+                  <h3 className="font-bold">5-Star Rated</h3>
+                  <p className="text-sm text-muted-foreground font-light">
+                    Consistently praised for care and reliability.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="bg-background border-border/50">
+                <CardContent className="p-6 text-center space-y-3">
+                  <Award className="w-8 h-8 mx-auto text-primary" />
+                  <h3 className="font-bold">Professional Service</h3>
+                  <p className="text-sm text-muted-foreground font-light">
+                    Local experts with a proven track record.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

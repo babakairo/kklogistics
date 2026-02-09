@@ -1,15 +1,26 @@
 # robots.txt for Kaithan Logistics
-# https://kaithanlogistics.up.railway.app
 
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://kaithanlogistics.up.railway.app/sitemap.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
-
-# Block admin/api paths from indexing
 Disallow: /api/
 Disallow: /_core/
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /_core/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /_core/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /_core/
+
+# Sitemap location
+Sitemap: https://kaithanlogistics.co.uk/sitemap.xml
+

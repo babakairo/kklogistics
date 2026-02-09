@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import Seo from "@/components/Seo";
 import { 
   Truck, 
   Package, 
@@ -23,7 +24,7 @@ const services = [
     title: "House Removals",
     subtitle: "Full Home Moving Service",
     description: "Moving home is stressful enough without worrying about the logistics. Our comprehensive house removal service takes care of everything, from careful packing to safe transport and unpacking at your new address.",
-    image: "/images/service-packing.svg",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&h=750&fit=crop",
     features: [
       "Full or partial packing service available",
       "Furniture disassembly and reassembly",
@@ -32,7 +33,8 @@ const services = [
       "Single items to full house moves",
       "Storage solutions if needed"
     ],
-    pricing: "From £50/hour"
+    pricing: "From £50/hour",
+    detailHref: "/services/house-removals"
   },
   {
     id: "furniture-delivery",
@@ -40,7 +42,7 @@ const services = [
     title: "Furniture Delivery",
     subtitle: "Safe & Secure Transport",
     description: "Whether you've bought a new sofa, picked up a bargain on Gumtree, or need furniture moved between properties, we provide careful collection and delivery across Falkirk and beyond.",
-    image: "/images/service-furniture.svg",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&h=750&fit=crop",
     features: [
       "Collection from any retailer or private seller",
       "Careful handling of all furniture types",
@@ -49,7 +51,8 @@ const services = [
       "Blanket wrapping included",
       "Competitive flat-rate pricing"
     ],
-    pricing: "From £30"
+    pricing: "From £30",
+    detailHref: "/services/furniture-delivery"
   },
   {
     id: "office-moves",
@@ -57,7 +60,7 @@ const services = [
     title: "Office Moves",
     subtitle: "Minimize Business Downtime",
     description: "Relocating your business requires careful planning and execution. We work around your schedule to ensure minimal disruption, handling everything from desks and chairs to IT equipment and filing cabinets.",
-    image: "/images/service-office.svg",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&h=750&fit=crop",
     features: [
       "Weekend and evening moves available",
       "IT equipment handling",
@@ -66,7 +69,8 @@ const services = [
       "Multi-floor building experience",
       "Project management for larger moves"
     ],
-    pricing: "Custom quotes"
+    pricing: "Custom quotes",
+    detailHref: "/services/office-moves"
   },
   {
     id: "courier",
@@ -74,7 +78,7 @@ const services = [
     title: "Courier Services",
     subtitle: "Fast & Reliable Delivery",
     description: "Need something delivered urgently? Our courier service offers same-day and next-day delivery for packages of all sizes across Central Scotland. Perfect for businesses and individuals alike.",
-    image: "/images/service-courier.svg",
+    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1000&h=750&fit=crop",
     features: [
       "Same-day delivery available",
       "Real-time tracking updates",
@@ -83,7 +87,8 @@ const services = [
       "Regular business routes",
       "Competitive per-mile rates"
     ],
-    pricing: "From £15"
+    pricing: "From £15",
+    detailHref: "/services/courier-services"
   }
 ];
 
@@ -96,6 +101,18 @@ const coverageAreas = [
 export default function Services() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Our Services | House Removals & Courier | Kaithan Logistics"
+        description="Explore our house removals, furniture delivery, office moves, and courier services across Falkirk and Central Scotland."
+        canonicalPath="/services"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Kaithan Logistics Services",
+          url: "https://kaithanlogistics.co.uk/services",
+          description: "House removals, furniture delivery, office moves, and courier services across Central Scotland.",
+        }}
+      />
       <Header />
       
       <main className="flex-1">
@@ -152,12 +169,17 @@ export default function Services() {
                         <p className="text-sm text-muted-foreground font-light">Starting from</p>
                         <p className="text-2xl font-bold">{service.pricing}</p>
                       </div>
-                      <Button asChild>
-                        <Link href="/quote">
-                          Get Quote
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </Link>
-                      </Button>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button asChild>
+                          <Link href="/quote">
+                            Get Quote
+                            <ArrowRight className="ml-2 w-4 h-4" />
+                          </Link>
+                        </Button>
+                        <Button variant="outline" asChild>
+                          <Link href={service.detailHref}>Learn More</Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                   
