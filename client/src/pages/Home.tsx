@@ -120,8 +120,6 @@ export default function Home() {
                     🚚 Local Falkirk experts • 📍 Serving Glasgow, Edinburgh & beyond • 💰 Zero hidden fees • ✅ Care guaranteed
                   </p>
                 </div>
-                  </p>
-                </div>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
@@ -178,7 +176,6 @@ export default function Home() {
                   src="/images/hero-van.svg" 
                   alt="KK Logistics Moving Van"
                   className="w-full max-w-md drop-shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
-                />
                 />
               </div>
             </div>
