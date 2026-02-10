@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import StickyMobileButtons from "@/components/StickyMobileButtons";
 import Seo from "@/components/Seo";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import { 
   Truck, 
   Package, 
@@ -169,28 +170,18 @@ export default function Home() {
               </div>
               </div>
 
-              {/* Hero Image */}
-              <div className="hidden lg:flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-                <img 
-                  src="/images/hero-van.svg" 
-                  alt="KK Logistics Moving Van"
-                  className="w-full max-w-md drop-shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
-                />
+              {/* Hero Image Slideshow */}
+              <div className="hidden lg:flex items-center justify-center relative h-[500px]">
+                <HeroSlideshow />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mobile Hero Image */}
+        {/* Mobile Hero Image Slideshow */}
         <div className="lg:hidden container mx-auto -mt-8 mb-12">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-            <img 
-              src="/images/hero-van.svg" 
-              alt="KK Logistics Moving Van"
-              className="w-full max-w-sm mx-auto drop-shadow-2xl relative z-10"
-            />
+          <div className="relative h-[300px] max-w-lg mx-auto">
+            <HeroSlideshow />
           </div>
         </div>
 
